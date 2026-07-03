@@ -20,9 +20,6 @@
 .chip, .band, .dot { --team-color:#ffffff; --team-text:#26231f; }
 .chip, .dot { border:1px solid rgba(0,0,0,.12); }
 
-/* ══════════════════════════════════════════
-   以下是版面樣式，通常不太需要動
-   ══════════════════════════════════════════ */
 
 *{box-sizing:border-box}
 body{
