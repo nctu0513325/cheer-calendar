@@ -2,7 +2,7 @@
 const TEAM_NAMES = ["樂天女孩", "洋基女孩", "桃氣女孩", "其他"];
 
 let events = [];        // 目前顯示月份的活動
-let VENUES = {};   // 場館 → 地址對照表
+let VENUES = {};        // 場館 → 地址對照表
 let year, month;        // month 是 0-indexed
 const monthCache = {};  // 已載入過的月份快取，避免重複下載
 
@@ -82,12 +82,12 @@ function openTicket(e){
   document.getElementById("ticket").innerHTML = `
     <div class="band" data-team="${e.team}">
       <div class="date">${e.date}（${dow}）</div>
-      <div class="title">${e.team}・${e.title}</div>
+      <div class="title">${e.title}</div>
     </div>
     <div class="tear"></div>
     <div class="body">
       ${rows.map(r=>`<div class="row"><div class="k">${r[0]}</div><div class="v">${r[1]}</div></div>`).join("")}
-      <a class="mapbtn" href="${maps}" target="_blank" rel="noreferrer">📍 在 Google Maps 開啟</a>
+      <a class="mapbtn" href="${maps}" target="_blank" rel="noreferrer"> 在 Google Maps 開啟</a>
       <button class="closebtn" onclick="closeTicket()">關閉</button>
     </div>`;
   document.getElementById("overlay").classList.add("open");
