@@ -70,7 +70,7 @@ function openTicket(e){
   const dow=WEEKDAYS[new Date(e.date+"T00:00:00").getDay()];
   const maps="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(e.address||e.venue);
   const rows=[
-    ["連結", e.link || "None"],
+    ["連結", e.link],
     ["時間", e.time||"未定"],
     ["地點", e.venue],
     ["地址", e.address],

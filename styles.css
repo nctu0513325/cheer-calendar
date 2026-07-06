@@ -32,7 +32,7 @@ body{
 h1{margin:0;font-size:26px;font-weight:800;letter-spacing:.02em}
 
 /* IG 連結 */
-.socials{display:flex;gap:8px}
+.socials{display:flex;gap:8px; flex-wrap: wrap}
 .igbtn{
   display:inline-block;text-decoration:none;font-size:13px;font-weight:700;
   color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;
@@ -49,11 +49,12 @@ h1{margin:0;font-size:26px;font-weight:800;letter-spacing:.02em}
 }
 
 /* 月曆 */
-.weekdays,.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+/* .weekdays,.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px} */
+.weekdays,.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
 .weekdays{margin-bottom:6px}
 .weekdays div{text-align:center;font-size:12px;font-weight:700;color:var(--muted);padding:4px 0}
 .weekdays div:first-child,.weekdays div:last-child{color:var(--weekend)}
-.cell{min-height:84px;background:var(--card);border-radius:10px;padding:6px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.cell{min-width: 0; min-height:84px;background:var(--card);border-radius:10px;padding:6px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
 .cell.empty{background:transparent;box-shadow:none}
 .cell .num{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:4px}
 .cell.today .num{color:#fff;background:var(--ink);display:inline-block;border-radius:6px;padding:0 5px}
