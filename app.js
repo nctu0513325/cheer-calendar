@@ -71,7 +71,6 @@ function openTicket(e){
     ["時間", e.time||"未定"],
     ["地點", e.venue],
     ["地址", e.address],
-    ["出勤", e.members],
     ["備註", e.note]
   ].filter(r=>r[1]);
 
