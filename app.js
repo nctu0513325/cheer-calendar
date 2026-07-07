@@ -72,7 +72,7 @@ function openTicket(e){
   const addr = e.address || VENUES[e.venue] || "";
   const maps="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(addr||e.venue);
   const rows=[
-    ["連結", e.link],
+    // ["連結", e.link],
     ["時間", e.time||"未定"],
     ["地點", e.venue],
     ["地址", addr],
@@ -86,8 +86,10 @@ function openTicket(e){
     </div>
     <div class="tear"></div>
     <div class="body">
-      ${rows.map(r=>`<div class="row"><div class="k">${r[0]}</div><div class="v">${r[1]}</div></div>`).join("")}
+    <!-- Write information in rows. Skip in no info. -->
+      ${rows.map(r=>`<div class="row"><div class="k">${r[0]}</div><div class="v">${r[1]}</div></div>`).join("")} 
       <a class="mapbtn" href="${maps}" target="_blank" rel="noreferrer"> 在 Google Maps 開啟</a>
+      ${e.link ? `<a class="eventlink" href="${e.link}" target="_blank" rel="noreferrer"> 活動連結 </a>`: ""}
       <button class="closebtn" onclick="closeTicket()">關閉</button>
     </div>`;
   document.getElementById("overlay").classList.add("open");
